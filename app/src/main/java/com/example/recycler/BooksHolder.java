@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class BooksHolder extends RecyclerView.ViewHolder {
 
-    private TextView text;
+    private TextView text; //Bdums
 
     public BooksHolder(@NonNull View itemView) {
         super(itemView);
