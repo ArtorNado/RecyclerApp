@@ -1,6 +1,7 @@
 package com.example.recycler;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class BooksAdapter extends RecyclerView.Adapter<BooksHolder> {
 
     private ArrayList<String> list;
+    Context context;
 
-    public BooksAdapter(ArrayList<String> list) {
+    public BooksAdapter(ArrayList<String> list, Context context) {
         this.list = list;
+        this.context = context;
     }
 
     @NonNull
@@ -23,7 +26,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksHolder> {
     public BooksHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.item, viewGroup, false);
-        return new BooksHolder(v);
+        return new BooksHolder(v,context);
     }
 
     @Override

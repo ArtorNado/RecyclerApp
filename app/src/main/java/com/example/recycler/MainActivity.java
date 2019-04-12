@@ -1,6 +1,7 @@
 package com.example.recycler;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
+    Context context = MainActivity.this;
 
 
     @Override
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.RecyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter adapter = new BooksAdapter(getMyList());
+        RecyclerView.Adapter adapter = new BooksAdapter(getMyList(), context);
         recyclerView.setAdapter(adapter);
 
     }
